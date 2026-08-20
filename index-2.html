@@ -1,0 +1,1922 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danny Hub | Social Media Marketing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+</body>
+<script scr="script.js"></script>
+</html>
+
+<header class="navbar">
+  <a href="index.html" class="logo">Boost<span>Pro</span></a>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#features">Features</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html" class="nav-btn">Get Started</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="badge">🚀 Professional Social Media Growth</span>
+
+    <h1>
+      Take Your Social Media
+      <span>To The Next Level.</span>
+    </h1>
+
+    <p>
+      Powerful marketing tools and professional services
+      designed to help creators and businesses grow online.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="signup.html" class="btn primary">Get Started</a>
+      <a href="#services" class="btn outline">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+
+  <div class="section-heading">
+    <span>WHAT WE OFFER</span>
+    <h2>Professional Services</h2>
+    <p>Choose the service that matches your goals.</p>
+  </div>
+
+  <div class="service-grid">
+
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Social Media Marketing</h3>
+      <p>Improve your online presence with strategic promotion.</p>
+      <a href="login.html">Learn More →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Content Creation</h3>
+      <p>Create professional content that attracts your audience.</p>
+      <a href="login.html">Learn More →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Analytics</h3>
+      <p>Understand your performance with useful reports.</p>
+      <a href="login.html">Learn More →</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="features" class="section dark-section">
+
+  <div class="section-heading light">
+    <span>WHY BOOSTPRO?</span>
+    <h2>Everything In One Place</h2>
+  </div>
+
+  <div class="feature-grid">
+
+    <div>
+      <h3>📦 Easy Orders</h3>
+      <p>Create and track your orders from your dashboard.</p>
+    </div>
+
+    <div>
+      <h3>📈 Growth Tools</h3>
+      <p>Manage your marketing activities easily.</p>
+    </div>
+
+    <div>
+      <h3>🔒 Secure Accounts</h3>
+      <p>Your account interface is designed with privacy in mind.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <div class="logo">Boost<span>Pro</span></div>
+  <p>© 2026 BoostPro. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
+2. "login.html"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | BoostPro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-card">
+
+  <a href="index.html" class="logo">Boost<span>Pro</span></a>
+
+  <h1>Welcome Back</h1>
+  <p>Login to access your dashboard.</p>
+
+  <form onsubmit="loginUser(event)">
+
+    <label>Email</label>
+    <input type="email" id="loginEmail" required>
+
+    <label>Password</label>
+    <input type="password" id="loginPassword" required>
+
+    <button class="btn primary full">Login</button>
+
+  </form>
+
+  <p class="auth-link">
+    Don't have an account?
+    <a href="signup.html">Create one</a>
+  </p>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+3. "signup.html"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | BoostPro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-card">
+
+  <a href="index.html" class="logo">Boost<span>Pro</span></a>
+
+  <h1>Create Account</h1>
+  <p>Start managing your social media services.</p>
+
+  <form onsubmit="signupUser(event)">
+
+    <label>Full Name</label>
+    <input type="text" id="signupName" required>
+
+    <label>Email</label>
+    <input type="email" id="signupEmail" required>
+
+    <label>Password</label>
+    <input type="password" id="signupPassword" minlength="6" required>
+
+    <button class="btn primary full">Create Account</button>
+
+  </form>
+
+  <p class="auth-link">
+    Already have an account?
+    <a href="login.html">Login</a>
+  </p>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+4. "dashboard.html"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | BoostPro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+<aside class="sidebar">
+
+  <a href="dashboard.html" class="logo">
+    Boost<span>Pro</span>
+  </a>
+
+  <a class="active" href="dashboard.html">📊 Dashboard</a>
+  <a href="services.html">📦 Services</a>
+  <a href="order.html">➕ New Order</a>
+  <a href="orders.html">📋 My Orders</a>
+  <a href="profile.html">👤 Profile</a>
+
+  <button onclick="logoutUser()" class="logout">
+    🚪 Logout
+  </button>
+
+</aside>
+
+<main class="dashboard-main">
+
+  <div class="dashboard-top">
+    <div>
+      <p>Welcome back</p>
+      <h1 id="dashboardName">User 👋</h1>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <span>📦</span>
+      <h3 id="orderCount">0</h3>
+      <p>Total Orders</p>
+    </div>
+
+    <div class="stat-card">
+      <span>⏳</span>
+      <h3>0</h3>
+      <p>Pending Orders</p>
+    </div>
+
+    <div class="stat-card">
+      <span>✅</span>
+      <h3>0</h3>
+      <p>Completed Orders</p>
+    </div>
+
+    <div class="stat-card">
+      <span>💰</span>
+      <h3>₦0</h3>
+      <p>Total Spent</p>
+    </div>
+
+  </div>
+
+  <div class="dashboard-card">
+
+    <div class="card-header">
+      <h2>Quick Actions</h2>
+    </div>
+
+    <div class="quick-actions">
+
+      <a href="order.html">
+        <span>➕</span>
+        <b>New Order</b>
+      </a>
+
+      <a href="services.html">
+        <span>📦</span>
+        <b>View Services</b>
+      </a>
+
+      <a href="orders.html">
+        <span>📋</span>
+        <b>Order History</b>
+      </a>
+
+      <a href="profile.html">
+        <span>👤</span>
+        <b>My Profile</b>
+      </a>
+
+    </div>
+
+  </div>
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+5. "services.html"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | BoostPro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+<aside class="sidebar">
+
+  <a href="dashboard.html" class="logo">
+    Boost<span>Pro</span>
+  </a>
+
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a class="active" href="services.html">📦 Services</a>
+  <a href="order.html">➕ New Order</a>
+  <a href="orders.html">📋 My Orders</a>
+  <a href="profile.html">👤 Profile</a>
+
+  <button onclick="logoutUser()" class="logout">🚪 Logout</button>
+
+</aside>
+
+<main class="dashboard-main">
+
+<h1>Our Services</h1>
+<p class="muted">Choose a service for your marketing campaign.</p>
+
+<div class="service-grid dashboard-services">
+
+  <div class="service-card">
+    <div class="service-icon">📱</div>
+    <h3>Social Media Marketing</h3>
+    <p>Professional promotion strategy.</p>
+    <a href="order.html">Order Service →</a>
+  </div>
+
+  <div class="service-card">
+    <div class="service-icon">🎨</div>
+    <h3>Content Creation</h3>
+    <p>Professional graphics and content planning.</p>
+    <a href="order.html">Order Service →</a>
+  </div>
+
+  <div class="service-card">
+    <div class="service-icon">📊</div>
+    <h3>Analytics Report</h3>
+    <p>Understand your social media performance.</p>
+    <a href="order.html">Order Service →</a>
+  </div>
+
+  <div class="service-card">
+    <div class="service-icon">🚀</div>
+    <h3>Campaign Promotion</h3>
+    <p>Promote your campaign to your target audience.</p>
+    <a href="order.html">Order Service →</a>
+  </div>
+
+</div>
+
+</main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+6. "order.html"
+
+Writing
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Order | BoostPro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+<aside class="sidebar">
+
+  <a href="dashboard.html" class="logo">
+    Boost<span>Pro</span>
+  </a>
+
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="services.html">📦 Services</a>
+  <a class="active" href="order.html">➕ New Order</a>
+  <a href="orders.html">📋 My Orders</a>
+  <a href="profile.html">👤 Profile</a>
+
+  <button onclick="logoutUser()" class="logout">🚪 Logout</button>
+
+</aside>
+
+<main class="dashboard-main">
+
+<div class="form-card order-form-card">
+
+  <div class="form-heading">
+    <span class="badge-small">🚀 BOOSTPRO SERVICES</span>
+    <h1>Create New Order</h1>
+    <p class="muted">Choose your service and package below.</p>
+  </div>
+
+  <form onsubmit="createOrder(event)">
+
+    <label>Select Service</label>
+
+    <select id="service" onchange="updatePackages()" required>
+
+      <option value="">Choose a service</option>
+
+      <option value="Social Media Marketing">
+        Social Media Marketing
+      </option>
+
+      <option value="Content Creation">
+        Content Creation
+      </option>
+
+      <option value="Analytics Report">
+        Analytics Report
+      </option>
+
+      <option value="Campaign Promotion">
+        Campaign Promotion
+      </option>
+
+    </select>
+
+
+    <label>Select Package</label>
+
+    <select id="package" onchange="updatePrice()" required disabled>
+
+      <option value="">Choose a service first</option>
+
+    </select>
+
+
+    <div class="price-preview">
+
+      <div>
+        <span>Package Price</span>
+        <strong id="packagePrice">₦0</strong>
+      </div>
+
+      <div>
+        <span>Quantity</span>
+        <strong id="quantityDisplay">1</strong>
+      </div>
+
+      <div class="total-price">
+        <span>Total</span>
+        <strong id="totalPrice">₦0</strong>
+      </div>
+
+    </div>
+
+
+    <label>Quantity</label>
+
+    <input
+      type="number"
+      id="quantity"
+      value="1"
+      min="1"
+      max="100"
+      onchange="updatePrice()"
+      oninput="updatePrice()"
+      required
+    >
+
+
+    <label>Platform</label>
+
+    <select id="platform" required>
+
+      <option value="">Choose platform</option>
+
+      <option>Instagram</option>
+      <option>TikTok</option>
+      <option>YouTube</option>
+      <option>Facebook</option>
+      <option>X</option>
+
+    </select>
+
+
+    <label>Profile / Campaign Link</label>
+
+    <input
+      type="url"
+      id="target"
+      placeholder="https://..."
+      required
+    >
+
+
+    <label>Additional Information</label>
+
+    <textarea
+      id="notes"
+      rows="5"
+      placeholder="Tell us what you need..."
+    ></textarea>
+
+
+    <button class="btn primary full">
+      Continue to Checkout →
+    </button>
+
+  </form>
+
+</div>
+
+</main>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+7. "orders.html"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders | BoostPro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+<aside class="sidebar">
+
+  <a href="dashboard.html" class="logo">
+    Boost<span>Pro</span>
+  </a>
+
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="services.html">📦 Services</a>
+  <a href="order.html">➕ New Order</a>
+  <a class="active" href="orders.html">📋 My Orders</a>
+  <a href="profile.html">👤 Profile</a>
+
+  <button onclick="logoutUser()" class="logout">🚪 Logout</button>
+
+</aside>
+
+<main class="dashboard-main">
+
+<h1>My Orders</h1>
+
+<div class="orders-container" id="ordersList"></div>
+
+</main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+8. "profile.html"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | BoostPro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+<aside class="sidebar">
+
+  <a href="dashboard.html" class="logo">
+    Boost<span>Pro</span>
+  </a>
+
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="services.html">📦 Services</a>
+  <a href="order.html">➕ New Order</a>
+  <a href="orders.html">📋 My Orders</a>
+  <a class="active" href="profile.html">👤 Profile</a>
+
+  <button onclick="logoutUser()" class="logout">🚪 Logout</button>
+
+</aside>
+
+<main class="dashboard-main">
+
+<div class="form-card">
+
+<h1>My Profile</h1>
+
+<label>Full Name</label>
+<input type="text" id="profileName">
+
+<label>Email</label>
+<input type="email" id="profileEmail" disabled>
+
+<button onclick="saveProfile()" class="btn primary">
+Save Changes
+</button>
+
+</div>
+
+</main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+9. "script.js"
+
+/* =========================
+   BOOSTPRO USER SYSTEM
+========================= */
+
+function getUser() {
+  return JSON.parse(localStorage.getItem("boostproUser"));
+}
+
+
+/* =========================
+   SIGN UP
+========================= */
+
+function signupUser(event) {
+
+  event.preventDefault();
+
+  const name = document.getElementById("signupName").value.trim();
+  const email = document.getElementById("signupEmail").value.trim();
+  const password = document.getElementById("signupPassword").value;
+
+  const user = {
+    name: name,
+    email: email,
+    password: password
+  };
+
+  localStorage.setItem(
+    "boostproUser",
+    JSON.stringify(user)
+  );
+
+  localStorage.setItem(
+    "boostproLoggedIn",
+    "true"
+  );
+
+  alert("Account created successfully!");
+
+  window.location.href = "dashboard.html";
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+function loginUser(event) {
+
+  event.preventDefault();
+
+  const email =
+    document.getElementById("loginEmail").value.trim();
+
+  const password =
+    document.getElementById("loginPassword").value;
+
+  const user = getUser();
+
+  if (!user) {
+
+    alert(
+      "No account found. Please create an account first."
+    );
+
+    return;
+  }
+
+  if (
+    email === user.email &&
+    password === user.password
+  ) {
+
+    localStorage.setItem(
+      "boostproLoggedIn",
+      "true"
+    );
+
+    window.location.href = "dashboard.html";
+
+  } else {
+
+    alert("Incorrect email or password.");
+
+  }
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+function logoutUser() {
+
+  localStorage.removeItem(
+    "boostproLoggedIn"
+  );
+
+  window.location.href = "index.html";
+}
+
+
+/* =========================
+   BOOSTPRO SERVICES
+========================= */
+
+const boostproServices = {
+
+  "Social Media Marketing": {
+
+    "Starter": 5000,
+    "Standard": 10000,
+    "Professional": 20000
+
+  },
+
+  "Content Creation": {
+
+    "Basic": 7500,
+    "Premium": 15000,
+    "Professional": 30000
+
+  },
+
+  "Analytics Report": {
+
+    "Basic": 5000,
+    "Advanced": 12000,
+    "Professional": 25000
+
+  },
+
+  "Campaign Promotion": {
+
+    "Starter": 10000,
+    "Growth": 25000,
+    "Premium": 50000
+
+  }
+
+};
+
+
+/* =========================
+   FORMAT MONEY
+========================= */
+
+function formatMoney(amount) {
+
+  return "₦" +
+    Number(amount).toLocaleString("en-NG");
+
+}
+
+
+/* =========================
+   LOAD PACKAGES
+========================= */
+
+function updatePackages() {
+
+  const service =
+    document.getElementById("service");
+
+  const packageSelect =
+    document.getElementById("package");
+
+  if (!service || !packageSelect) return;
+
+  const selectedService =
+    service.value;
+
+  packageSelect.innerHTML =
+    '<option value="">Choose a package</option>';
+
+  if (!selectedService) {
+
+    packageSelect.disabled = true;
+
+    updatePrice();
+
+    return;
+  }
+
+  const packages =
+    boostproServices[selectedService];
+
+  Object.entries(packages).forEach(
+    ([packageName, price]) => {
+
+      const option =
+        document.createElement("option");
+
+      option.value = packageName;
+
+      option.textContent =
+        `${packageName} — ${formatMoney(price)}`;
+
+      packageSelect.appendChild(option);
+
+    }
+  );
+
+  packageSelect.disabled = false;
+
+  updatePrice();
+}
+
+
+/* =========================
+   UPDATE PRICE
+========================= */
+
+function updatePrice() {
+
+  const serviceElement =
+    document.getElementById("service");
+
+  const packageElement =
+    document.getElementById("package");
+
+  const quantityElement =
+    document.getElementById("quantity");
+
+  const packagePriceElement =
+    document.getElementById("packagePrice");
+
+  const totalPriceElement =
+    document.getElementById("totalPrice");
+
+  const quantityDisplay =
+    document.getElementById("quantityDisplay");
+
+  if (
+    !serviceElement ||
+    !packageElement ||
+    !quantityElement
+  ) return;
+
+  const service =
+    serviceElement.value;
+
+  const packageName =
+    packageElement.value;
+
+  let quantity =
+    parseInt(quantityElement.value) || 1;
+
+  if (quantity < 1) quantity = 1;
+
+  if (quantity > 100) quantity = 100;
+
+  quantityElement.value = quantity;
+
+  if (quantityDisplay) {
+    quantityDisplay.textContent = quantity;
+  }
+
+  let price = 0;
+
+  if (
+    service &&
+    packageName &&
+    boostproServices[service] &&
+    boostproServices[service][packageName]
+  ) {
+
+    price =
+      boostproServices[service][packageName];
+
+  }
+
+  const total =
+    price * quantity;
+
+  if (packagePriceElement) {
+
+    packagePriceElement.textContent =
+      formatMoney(price);
+
+  }
+
+  if (totalPriceElement) {
+
+    totalPriceElement.textContent =
+      formatMoney(total);
+
+  }
+}
+
+
+/* =========================
+   CREATE ORDER
+========================= */
+
+function createOrder(event) {
+
+  event.preventDefault();
+
+  const service =
+    document.getElementById("service").value;
+
+  const packageName =
+    document.getElementById("package").value;
+
+  const platform =
+    document.getElementById("platform").value;
+
+  const target =
+    document.getElementById("target").value;
+
+  const notes =
+    document.getElementById("notes").value;
+
+  const quantity =
+    parseInt(
+      document.getElementById("quantity").value
+    ) || 1;
+
+
+  if (!service || !packageName) {
+
+    alert("Please select a service and package.");
+
+    return;
+  }
+
+
+  const price =
+    boostproServices[service][packageName];
+
+
+  const total =
+    price * quantity;
+
+
+  const orders =
+    JSON.parse(
+      localStorage.getItem("boostproOrders")
+    ) || [];
+
+
+  const order = {
+
+    id: "BP" + Date.now(),
+
+    service: service,
+
+    package: packageName,
+
+    platform: platform,
+
+    target: target,
+
+    notes: notes,
+
+    quantity: quantity,
+
+    price: price,
+
+    total: total,
+
+    status: "Pending",
+
+    date: new Date().toLocaleDateString("en-NG")
+
+  };
+
+
+  orders.push(order);
+
+
+  localStorage.setItem(
+    "boostproOrders",
+    JSON.stringify(orders)
+  );
+
+
+  alert(
+    "Order created successfully!\n\n" +
+    "Total: " +
+    formatMoney(total)
+  );
+
+
+  window.location.href =
+    "orders.html";
+}
+
+
+/* =========================
+   LOAD ORDERS
+========================= */
+
+function loadOrders() {
+
+  const container =
+    document.getElementById("ordersList");
+
+  if (!container) return;
+
+
+  const orders =
+    JSON.parse(
+      localStorage.getItem("boostproOrders")
+    ) || [];
+
+
+  if (orders.length === 0) {
+
+    container.innerHTML = `
+
+      <div class="empty">
+
+        <h2>No orders yet</h2>
+
+        <p>
+          Create your first order to get started.
+        </p>
+
+        <a
+          href="order.html"
+          class="btn primary"
+        >
+          Create Order
+        </a>
+
+      </div>
+
+    `;
+
+    return;
+  }
+
+
+  container.innerHTML =
+    orders.map(order => `
+
+      <div class="order-card">
+
+        <div>
+
+          <span class="order-id">
+            ${order.id}
+          </span>
+
+          <h3>
+            ${order.service}
+          </h3>
+
+          <p>
+            Package: ${order.package}
+          </p>
+
+          <p>
+            Platform: ${order.platform}
+          </p>
+
+          <p>
+            Quantity: ${order.quantity}
+          </p>
+
+          <strong>
+            ${formatMoney(order.total)}
+          </strong>
+
+          <br>
+
+          <small>
+            ${order.date}
+          </small>
+
+        </div>
+
+        <span class="status">
+          ${order.status}
+        </span>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+function loadDashboard() {
+
+  const user =
+    getUser();
+
+
+  const name =
+    document.getElementById(
+      "dashboardName"
+    );
+
+
+  if (name && user) {
+
+    name.textContent =
+      user.name + " 👋";
+
+  }
+
+
+  const orders =
+    JSON.parse(
+      localStorage.getItem(
+        "boostproOrders"
+      )
+    ) || [];
+
+
+  const orderCount =
+    document.getElementById(
+      "orderCount"
+    );
+
+
+  if (orderCount) {
+
+    orderCount.textContent =
+      orders.length;
+
+  }
+
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+function loadProfile() {
+
+  const user =
+    getUser();
+
+
+  const name =
+    document.getElementById(
+      "profileName"
+    );
+
+  const email =
+    document.getElementById(
+      "profileEmail"
+    );
+
+
+  if (user) {
+
+    if (name)
+      name.value = user.name;
+
+    if (email)
+      email.value = user.email;
+
+  }
+
+}
+
+
+/* =========================
+   SAVE PROFILE
+========================= */
+
+function saveProfile() {
+
+  const user =
+    getUser();
+
+  if (!user) return;
+
+
+  user.name =
+    document.getElementById(
+      "profileName"
+    ).value;
+
+
+  localStorage.setItem(
+    "boostproUser",
+    JSON.stringify(user)
+  );
+
+
+  alert(
+    "Profile updated successfully!"
+  );
+
+}
+
+
+/* =========================
+   START BOOSTPRO
+========================= */
+
+loadOrders();
+
+loadDashboard();
+
+loadProfile();
+
+updatePackages();
+
+updatePrice();
+
+10. "style.css"
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #111827;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.logo span {
+  color: #2563eb;
+}
+
+/* NAVBAR */
+
+.navbar {
+  height: 75px;
+  padding: 0 7%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar nav a {
+  color: #374151;
+}
+
+.nav-btn {
+  background: #2563eb;
+  color: white !important;
+  padding: 11px 18px;
+  border-radius: 7px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  padding: 100px 7%;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 80% 30%, #2563eb55, transparent 35%),
+    #0f172a;
+  color: white;
+}
+
+.hero-content {
+  max-width: 750px;
+}
+
+.badge {
+  background: #2563eb33;
+  border: 1px solid #2563eb;
+  padding: 8px 14px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 7vw, 75px);
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #60a5fa;
+  display: block;
+}
+
+.hero p {
+  color: #cbd5e1;
+  font-size: 19px;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.primary:hover {
+  background: #1d4ed8;
+}
+
+.outline {
+  border: 1px solid #94a3b8;
+  color: white;
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 90px 7%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading span {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.section-heading h2 {
+  font-size: 40px;
+  margin: 8px 0;
+}
+
+.section-heading p {
+  color: #6b7280;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.service-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #e5e7eb;
+  transition: .2s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #00000012;
+}
+
+.service-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.service-card a {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+/* DARK */
+
+.dark-section {
+  background: #0f172a;
+  color: white;
+}
+
+.light h2 {
+  color: white;
+}
+
+.light p {
+  color: #94a3b8;
+}
+
+.feature-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature-grid div {
+  padding: 25px;
+  background: #1e293b;
+  border-radius: 12px;
+}
+
+.feature-grid p {
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #020617;
+  color: #94a3b8;
+  padding: 30px 7%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* AUTH */
+
+.auth-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef4ff;
+  padding: 20px;
+}
+
+.auth-card {
+  background: white;
+  width: 100%;
+  max-width: 430px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 50px #00000015;
+}
+
+.auth-card h1 {
+  margin-top: 30px;
+  margin-bottom: 8px;
+}
+
+.auth-card > p {
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin: 15px 0 7px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2563eb;
+}
+
+.full {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-link a {
+  color: #2563eb;
+}
+
+/* DASHBOARD */
+
+.dashboard-layout {
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background: #0f172a;
+  padding: 30px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar .logo {
+  color: white;
+  margin: 0 12px 30px;
+}
+
+.sidebar a {
+  color: #94a3b8;
+  padding: 13px;
+  border-radius: 8px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #1e293b;
+  color: white;
+}
+
+.logout {
+  margin-top: auto;
+  background: #dc2626;
+  border: none;
+  padding: 13px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 40px;
+  overflow-x: auto;
+}
+
+.dashboard-top {
+  margin-bottom: 30px;
+}
+
+.dashboard-top p,
+.muted {
+  color: #6b7280;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.stat-card span {
+  font-size: 25px;
+}
+
+.stat-card h3 {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.stat-card p {
+  color: #6b7280;
+}
+
+.dashboard-card,
+.form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  margin-top: 30px;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.quick-actions a {
+  padding: 20px;
+  background: #f8fafc;
+  color: #111827;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ORDERS */
+
+.orders-container {
+  margin-top: 25px;
+}
+
+.order-card {
+  background: white;
+  padding: 25px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-id {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.order-card h3 {
+  margin: 8px 0;
+}
+
+.order-card p,
+.order-card small {
+  color: #6b7280;
+}
+
+.status {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.empty {
+  background: white;
+  text-align: center;
+  padding: 60px;
+  border-radius: 12px;
+}
+
+.dashboard-services {
+  margin-top: 30px;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .service-grid,
+  .feature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quick-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .navbar nav a:not(.nav-btn) {
+    display: none;
+  }
+
+  .hero {
+    padding: 80px 5%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+
+  .service-grid,
+  .feature-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-layout {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar .logout {
+    margin-top: 10px;
+  }
+
+  .dashboard-main {
+    padding: 25px 15px;
+  }
+
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .order-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+}
+Writing
+
+/* =========================
+   STAGE 2 ORDER SYSTEM
+========================= */
+
+.order-form-card {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-heading {
+  margin-bottom: 25px;
+}
+
+.form-heading h1 {
+  font-size: 36px;
+  margin: 12px 0 8px;
+}
+
+.badge-small {
+  display: inline-block;
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* PRICE BOX */
+
+.price-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.price-preview > div {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.price-preview span {
+  display: block;
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.price-preview strong {
+  font-size: 22px;
+}
+
+.price-preview .total-price {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.price-preview .total-price strong {
+  color: #2563eb;
+  font-size: 25px;
+}
+
+
+/* SELECT */
+
+select:disabled {
+  background: #f1f5f9;
+  cursor: not-allowed;
+}
+
+
+/* ORDER CARD UPDATE */
+
+.order-card strong {
+  display: inline-block;
+  margin-top: 8px;
+  color: #2563eb;
+  font-size: 18px;
+}
+
+.order-card p {
+  margin-top: 4px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .order-form-card {
+    padding: 20px;
+  }
+
+  .form-heading h1 {
+    font-size: 28px;
+  }
+
+  .price-preview {
+    grid-template-columns: 1fr;
+  }
+
+}
