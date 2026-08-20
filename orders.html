@@ -1,1 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>BoostPro | My Orders</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f8f4;
+      color: #172033;
+    }
+
+    .topbar {
+      background: #063b2b;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #5ee59b;
+      font-size: 26px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #5ee59b;
+    }
+
+    .orders-container {
+      width: 92%;
+      max-width: 1150px;
+      margin: 40px auto;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, #063b2b, #0a9b61);
+      color: white;
+      padding: 30px;
+      border-radius: 18px;
+      margin-bottom: 25px;
+    }
+
+    .page-header h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .page-header p {
+      opacity: 0.9;
+    }
+
+    .new-order {
+      display: inline-block;
+      margin-top: 18px;
+      background: white;
+      color: #087647;
+      padding: 11px 18px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .orders-card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 7px 20px rgba(0,0,0,0.06);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 750px;
+    }
+
+    th {
+      background: #e8f7ef;
+      color: #063b2b;
+      text-align: left;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    td {
+      padding: 17px 15px;
+      border-bottom: 1px solid #edf2ef;
+      font-size: 14px;
+    }
+
+    tr:hover {
+      background: #f8fcfa;
+    }
+
+    .order-id {
+      color: #087647;
+      font-weight: 700;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .completed {
+      background: #dcf8e9;
+      color: #087647;
+    }
+
+    .pending {
+      background: #fff3d6;
+      color: #946200;
+    }
+
+    .processing {
+      background: #e2f1ff;
+      color: #1264a3;
+    }
+
+    .cancelled {
+      background: #ffe5e5;
+      color: #b42318;
+    }
+
+    .view-btn {
+      color: #087647;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 50px 20px;
+      color: #667085;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .summary-card {
+      background: white;
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid #dceee5;
+    }
+
+    .summary-card h3 {
+      font-size: 14px;
+      color: #667085;
+      margin-bottom: 8px;
+    }
+
+    .summary-card strong {
+      font-size: 25px;
+      color: #063b2b;
+    }
+
+    @media (max-width: 700px) {
+
+      .topbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      .orders-container {
+        width: 95%;
+        margin-top: 25px;
+      }
+
+      .page-header {
+        padding: 24px;
+      }
+
+      .summary {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <a href="index.html" class="logo">
+      BoostPro
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="order.html">New Order</a>
+    </nav>
+
+  </header>
+
+
+  <main class="orders-container">
+
+    <section class="page-header">
+
+      <h1>My Orders 📦</h1>
+
+      <p>
+        Track and manage all your BoostPro orders in one place.
+      </p>
+
+      <a href="order.html" class="new-order">
+        + Place New Order
+      </a>
+
+    </section>
+
+
+    <section class="summary">
+
+      <div class="summary-card">
+        <h3>Total Orders</h3>
+        <strong>24</strong>
+      </div>
+
+      <div class="summary-card">
+        <h3>Completed</h3>
+        <strong>18</strong>
+      </div>
+
+      <div class="summary-card">
+        <h3>Pending</h3>
+        <strong>6</strong>
+      </div>
+
+    </section>
+
+
+    <section class="orders-card">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Order ID</th>
+            <th>Service</th>
+            <th>Platform</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td class="order-id">#BP00124</td>
+            <td>Followers</td>
+            <td>Instagram</td>
+            <td>2,000</td>
+            <td>
+              <span class="status completed">
+                Completed
+              </span>
+            </td>
+            <td>20 Aug 2026</td>
+            <td>
+              <a href="#" class="view-btn">View</a>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td class="order-id">#BP00125</td>
+            <td>Likes</td>
+            <td>TikTok</td>
+            <td>5,000</td>
+            <td>
+              <span class="status pending">
+                Pending
+              </span>
+            </td>
+            <td>20 Aug 2026</td>
+            <td>
+              <a href="#" class="view-btn">View</a>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td class="order-id">#BP00126</td>
+            <td>Views</td>
+            <td>YouTube</td>
+            <td>10,000</td>
+            <td>
+              <span class="status processing">
+                Processing
+              </span>
+            </td>
+            <td>19 Aug 2026</td>
+            <td>
+              <a href="#" class="view-btn">View</a>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td class="order-id">#BP00123</td>
+            <td>Engagement</td>
+            <td>Facebook</td>
+            <td>1,000</td>
+            <td>
+              <span class="status completed">
+                Completed
+              </span>
+            </td>
+            <td>18 Aug 2026</td>
+            <td>
+              <a href="#" class="view-btn">View</a>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td class="order-id">#BP00122</td>
+            <td>Subscribers</td>
+            <td>YouTube</td>
+            <td>500</td>
+            <td>
+              <span class="status cancelled">
+                Cancelled
+              </span>
+            </td>
+            <td>17 Aug 2026</td>
+            <td>
+              <a href="#" class="view-btn">View</a>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
