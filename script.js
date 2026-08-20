@@ -40,8 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       serviceCards.forEach(function (card) {
 
-        const cardText =
-          card.textContent.toLowerCase();
+        const cardText = card.textContent.toLowerCase();
 
         if (
           selectedCategory === "all services" ||
@@ -66,12 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const platform = document.getElementById("platform");
   const service = document.getElementById("service");
   const quantity = document.getElementById("quantity");
-
   const priceDisplay = document.querySelector(".price");
 
   function calculatePrice() {
 
-    if (!platform || !service || !quantity || !priceDisplay) {
+    if (!service || !quantity || !priceDisplay) {
       return;
     }
 
@@ -131,37 +129,157 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================================
-     4. PASSWORD CONFIRMATION
+     4. SIGNUP / CREATE ACCOUNT
   ========================================= */
 
-  const signupForm = document.querySelector(
-    'form[action="dashboard.html"]'
-  );
+  const signupForm =
+    document.getElementById("signupForm");
 
-  const password =
-    document.getElementById("password");
-
-  const confirmPassword =
-    document.getElementById("confirmPassword");
-
-  if (
-    signupForm &&
-    password &&
-    confirmPassword
-  ) {
+  if (signupForm) {
 
     signupForm.addEventListener("submit", function (event) {
 
+      event.preventDefault();
+
+      const nameInput =
+        document.getElementById("name");
+
+      const emailInput =
+        document.getElementById("email");
+
+      const passwordInput =
+        document.getElementById("password");
+
+      const confirmPasswordInput =
+        document.getElementById("confirmPassword");
+
       if (
-        password.value !==
-        confirmPassword.value
+        !nameInput ||
+        !emailInput ||
+        !passwordInput ||
+        !confirmPasswordInput
+      ) {
+        alert("Please check your signup form fields.");
+        return;
+      }
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim().toLowerCase();
+      const password = passwordInput.value;
+      const confirmPassword = confirmPasswordInput.value;
+
+      if (!name || !email || !password || !confirmPassword) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        confirmPasswordInput.focus();
+        return;
+      }
+
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters.");
+        passwordInput.focus();
+        return;
+      }
+
+      /* Save account */
+
+      const account = {
+        name: name,
+        email: email,
+        password: password
+      };
+
+      localStorage.setItem(
+        "boostproAccount",
+        JSON.stringify(account)
+      );
+
+      /* Save login status */
+
+      localStorage.setItem(
+        "boostproLoggedIn",
+        "true"
+      );
+
+      alert(
+        "Account created successfully! Welcome to BoostPro 🚀"
+      );
+
+      /* Go to dashboard */
+
+      window.location.href = "dashboard.html";
+
+    });
+
+  }
+
+
+  /* =========================================
+     5. LOGIN
+  ========================================= */
+
+  const loginForm =
+    document.getElementById("loginForm");
+
+  if (loginForm) {
+
+    loginForm.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      const emailInput =
+        document.getElementById("email");
+
+      const passwordInput =
+        document.getElementById("password");
+
+      if (!emailInput || !passwordInput) {
+        alert("Login form is missing required fields.");
+        return;
+      }
+
+      const email =
+        emailInput.value.trim().toLowerCase();
+
+      const password =
+        passwordInput.value;
+
+      const savedAccount =
+        localStorage.getItem("boostproAccount");
+
+      if (!savedAccount) {
+        alert("No BoostPro account found. Please create an account first.");
+        return;
+      }
+
+      const account =
+        JSON.parse(savedAccount);
+
+      if (
+        email === account.email &&
+        password === account.password
       ) {
 
-        event.preventDefault();
+        localStorage.setItem(
+          "boostproLoggedIn",
+          "true"
+        );
 
-        alert("Passwords do not match. Please try again.");
+        alert("Login successful! 🚀");
 
-        confirmPassword.focus();
+        window.location.href =
+          "dashboard.html";
+
+      } else {
+
+        alert(
+          "Incorrect email or password."
+        );
+
       }
 
     });
@@ -170,7 +288,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================================
-     5. SMOOTH SCROLLING
+     6. DASHBOARD USER NAME
+  ========================================= */
+
+  const savedAccount =
+    localStorage.getItem("boostproAccount");
+
+  if (savedAccount) {
+
+    try {
+
+      const account =
+        JSON.parse(savedAccount);
+
+      document.querySelectorAll(
+        ".user-name, .profile-name"
+      ).forEach(function (element) {
+
+        element.textContent =
+          account.name;
+
+      });
+
+    } catch (error) {
+
+      console.log(
+        "Unable to load account information."
+      );
+
+    }
+
+  }
+
+
+  /* =========================================
+     7. SMOOTH SCROLLING
   ========================================= */
 
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
@@ -180,10 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetId =
         this.getAttribute("href");
 
-      if (
-        targetId &&
-        targetId !== "#"
-      ) {
+      if (targetId && targetId !== "#") {
 
         const target =
           document.querySelector(targetId);
@@ -206,38 +355,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================================
-     6. ORDER BUTTON FEEDBACK
+     8. ORDER BUTTON FEEDBACK
   ========================================= */
 
-  const orderButtons =
-    document.querySelectorAll(".order-btn");
+  document.querySelectorAll(".order-btn")
+    .forEach(function (button) {
 
-  orderButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
 
-    button.addEventListener("click", function () {
+        if (this.getAttribute("href") === "#") {
 
-      if (
-        this.getAttribute("href") === "#"
-      ) {
+          alert(
+            "Please select a service and place your order."
+          );
 
-        alert(
-          "Please select a service and place your order."
-        );
+        }
 
-      }
+      });
 
     });
 
-  });
-
 
   /* =========================================
-     7. SAVE PROFILE FEEDBACK
+     9. PROFILE SAVE
   ========================================= */
 
   const profileForms =
     document.querySelectorAll(
-      'form[action="#"]'
+      ".profile-form"
     );
 
   profileForms.forEach(function (form) {
@@ -256,63 +401,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================================
-     8. WELCOME MESSAGE
+     10. CURRENT YEAR
   ========================================= */
 
-  const currentPage =
-    window.location.pathname
-      .split("/")
-      .pop();
+  document.querySelectorAll(".current-year")
+    .forEach(function (element) {
 
-  if (
-    currentPage === "dashboard.html"
-  ) {
+      element.textContent =
+        new Date().getFullYear();
 
-    console.log(
-      "Welcome to your BoostPro Dashboard 🚀"
-    );
-
-  }
+    });
 
 
   /* =========================================
-     9. CURRENT YEAR
+     11. LOGOUT
   ========================================= */
 
-  const yearElements =
-    document.querySelectorAll(".current-year");
+  const logoutButtons =
+    document.querySelectorAll(".logout-btn");
 
-  yearElements.forEach(function (element) {
+  logoutButtons.forEach(function (button) {
 
-    element.textContent =
-      new Date().getFullYear();
+    button.addEventListener("click", function (event) {
 
-  });
+      event.preventDefault();
 
+      localStorage.removeItem(
+        "boostproLoggedIn"
+      );
 
-  /* =========================================
-     10. BUTTON LOADING EFFECT
-  ========================================= */
-
-  document.querySelectorAll(
-    ".login-btn, .signup-btn, .submit-btn"
-  ).forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-      const form =
-        this.closest("form");
-
-      if (
-        form &&
-        form.checkValidity()
-      ) {
-
-        this.textContent = "Processing...";
-
-        this.style.opacity = "0.8";
-
-      }
+      window.location.href =
+        "login.html";
 
     });
 
