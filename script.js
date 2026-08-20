@@ -1,5 +1,5 @@
 /* =========================================
-   BOOSTPRO - MAIN JAVASCRIPT
+   DANNY HUB - MAIN JAVASCRIPT
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
