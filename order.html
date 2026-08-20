@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoostPro | Place Order</title>
 
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #063b2b, #0a9b61, #e7f8ef);
+      min-height: 100vh;
+      color: #172033;
+    }
+
+    .topbar {
+      background: #063b2b;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #5ee59b;
+      font-size: 26px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #5ee59b;
+    }
+
+    .order-container {
+      width: 92%;
+      max-width: 900px;
+      margin: 40px auto;
+    }
+
+    .order-header {
+      text-align: center;
+      color: white;
+      margin-bottom: 25px;
+    }
+
+    .order-header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .order-header p {
+      opacity: 0.9;
+    }
+
+    .order-card {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #063b2b;
+    }
+
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d5e7dd;
+      border-radius: 10px;
+      outline: none;
+      font-size: 15px;
+      background: white;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #0a9b61;
+      box-shadow: 0 0 0 3px rgba(10,155,97,0.12);
+    }
+
+    .price-box {
+      background: #e6f8ee;
+      border: 1px solid #b9e8cf;
+      padding: 18px;
+      border-radius: 12px;
+      margin: 25px 0;
+    }
+
+    .price-box h3 {
+      color: #087647;
+      margin-bottom: 7px;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #063b2b;
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      padding: 15px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #087647, #0a9b61);
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(10,155,97,0.25);
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 18px;
+      color: #667085;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .order-card {
+        padding: 24px 18px;
+      }
+
+      .order-header h1 {
+        font-size: 26px;
+      }
+
+      .nav-links {
+        gap: 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a href="index.html" class="logo">BoostPro</a>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="orders.html">Orders</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="order-container">
+
+    <div class="order-header">
+      <h1>Place a New Order 🚀</h1>
+      <p>Choose a service and start growing your social media presence.</p>
+    </div>
+
+    <div class="order-card">
+
+      <form action="orders.html" method="get">
+
+        <div class="form-group">
+          <label for="platform">Select Platform</label>
+
+          <select id="platform" name="platform" required>
+            <option value="">Choose a platform</option>
+            <option value="instagram">Instagram</option>
+            <option value="tiktok">TikTok</option>
+            <option value="youtube">YouTube</option>
+            <option value="facebook">Facebook</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Select Service</label>
+
+          <select id="service" name="service" required>
+            <option value="">Choose a service</option>
+            <option value="followers">Followers</option>
+            <option value="likes">Likes</option>
+            <option value="views">Views</option>
+            <option value="subscribers">Subscribers</option>
+            <option value="engagement">Engagement</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            placeholder="Enter quantity"
+            min="1"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="link">Social Media Link</label>
+
+          <input
+            type="url"
+            id="link"
+            name="link"
+            placeholder="https://..."
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+
+          <textarea
+            id="notes"
+            name="notes"
+            rows="4"
+            placeholder="Add any special instructions..."
+          ></textarea>
+        </div>
+
+        <div class="price-box">
+          <h3>Estimated Price</h3>
+          <div class="price">₦0.00</div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          🚀 Place Order
+        </button>
+
+      </form>
+
+      <p class="note">
+        Please make sure your social media link is correct before submitting.
+      </p>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
