@@ -6,8 +6,6 @@
 
   <title>BoostPro | My Orders</title>
 
-  <link rel="stylesheet" href="style.css">
-
   <style>
     * {
       margin: 0;
@@ -16,25 +14,133 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f1f8f4;
-      color: #172033;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(212,175,55,0.10), transparent 30%),
+        #050805;
+      color: #fff;
+      min-height: 100vh;
     }
 
     .topbar {
-      background: #063b2b;
+      background: rgba(5,8,5,0.97);
+      border-bottom: 1px solid rgba(212,175,55,0.2);
       padding: 18px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
-      color: #5ee59b;
+      color: #d4af37;
       font-size: 26px;
       font-weight: 800;
       text-decoration: none;
     }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    .orders-container {
+      width: 92%;
+      max-width: 1150px;
+      margin: 40px auto 70px;
+    }
+
+    .page-header {
+      background:
+        linear-gradient(135deg, #0b190e, #123c22);
+      border: 1px solid rgba(212,175,55,0.25);
+      padding: 30px;
+      border-radius: 18px;
+      margin-bottom: 25px;
+    }
+
+    .page-header h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .page-header p {
+      color: #aaa;
+    }
+
+    .new-order {
+      display: inline-block;
+      margin-top: 18px;
+      background: #d4af37;
+      color: #050805;
+      padding: 11px 18px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .summary-card {
+      background: #0b110b;
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid rgba(212,175,55,0.18);
+    }
+
+    .summary-card h3 {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .summary-card strong {
+      font-size: 27px;
+      color: #d4af37;
+    }
+
+    .orders-card {
+      background: #0b110b;
+      border: 1px solid rgba(212,175,55,0.18);
+      border-radius: 18px;
+      padding: 25px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+
+    th {
+      background: #111a11;
+      color: #d4af37;
+      text-align: left;
+      padding: 15px;
+      font-size: 13px;
+    }
+
+    td {
+      padding: 17px 15px    }
 
     .nav-links {
       display: flex;
