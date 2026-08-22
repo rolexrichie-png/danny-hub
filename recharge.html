@@ -1,1 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>BoostPro | Airtime & Data</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f8f4;
+      color: #17221a;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #087f3d, #16b45b);
+      color: white;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header h1 {
+      font-size: 22px;
+    }
+
+    .back {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .intro h2 {
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      color: #68756c;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .card h3 {
+      margin-bottom: 18px;
+      font-size: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 13px 0 7px;
+      font-weight: bold;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d6ded8;
+      border-radius: 9px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    select:focus,
+    input:focus {
+      border-color: #0a9848;
+    }
+
+    .btn {
+      width: 100%;
+      border: none;
+      padding: 14px;
+      margin-top: 18px;
+      border-radius: 9px;
+      background: #0a9848;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #087f3d;
+    }
+
+    .notice {
+      background: #e8f7ee;
+      border-left: 4px solid #0a9848;
+      padding: 13px;
+      margin-top: 15px;
+      border-radius: 6px;
+      color: #31543d;
+      font-size: 14px;
+    }
+
+    .nav {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .nav a {
+      color: #087f3d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>🚀 BoostPro</h1>
+    <a href="dashboard.html" class="back">← Dashboard</a>
+  </header>
+
+  <main class="container">
+
+    <div class="intro">
+      <h2>📱 Airtime & Data</h2>
+      <p>Recharge your phone quickly and easily.</p>
+    </div>
+
+    <!-- AIRTIME -->
+
+    <div class="card">
+
+      <h3>📞 Buy Airtime</h3>
+
+      <label for="airtimeNetwork">Network</label>
+
+      <select id="airtimeNetwork">
+        <option value="">Select network</option>
+        <option value="MTN">MTN</option>
+        <option value="Airtel">Airtel</option>
+        <option value="Glo">Glo</option>
+        <option value="9mobile">9mobile</option>
+      </select>
+
+      <label for="airtimePhone">Phone Number</label>
+
+      <input
+        type="tel"
+        id="airtimePhone"
+        placeholder="08012345678"
+        maxlength="11"
+      >
+
+      <label for="airtimeAmount">Amount (₦)</label>
+
+      <input
+        type="number"
+        id="airtimeAmount"
+        placeholder="Enter amount"
+        min="50"
+      >
+
+      <button class="btn" onclick="buyAirtime()">
+        Buy Airtime
+      </button>
+
+    </div>
+
+    <!-- DATA -->
+
+    <div class="card">
+
+      <h3>🌐 Buy Data</h3>
+
+      <label for="dataNetwork">Network</label>
+
+      <select id="dataNetwork">
+
+        <option value="">Select network</option>
+        <option value="MTN">MTN</option>
+        <option value="Airtel">Airtel</option>
+        <option value="Glo">Glo</option>
+        <option value="9mobile">9mobile</option>
+
+      </select>
+
+      <label for="dataPhone">Phone Number</label>
+
+      <input
+        type="tel"
+        id="dataPhone"
+        placeholder="08012345678"
+        maxlength="11"
+      >
+
+      <label for="dataPlan">Data Plan</label>
+
+      <select id="dataPlan">
+
+        <option value="">Select data plan</option>
+        <option value="500MB">500MB</option>
+        <option value="1GB">1GB</option>
+        <option value="2GB">2GB</option>
+        <option value="3GB">3GB</option>
+        <option value="5GB">5GB</option>
+        <option value="10GB">10GB</option>
+
+      </select>
+
+      <button class="btn" onclick="buyData()">
+        Buy Data
+      </button>
+
+    </div>
+
+    <div class="notice">
+      ⚠️ Recharge purchases are not connected to a real VTU provider yet.
+      We will connect a legitimate payment/recharge provider before real
+      transactions are enabled.
+    </div>
+
+    <div class="nav">
+      <a href="dashboard.html">← Back to Dashboard</a>
+    </div>
+
+  </main>
+
+  <script>
+
+    function buyAirtime() {
+
+      const network =
+        document.getElementById("airtimeNetwork").value;
+
+      const phone =
+        document.getElementById("airtimePhone").value;
+
+      const amount =
+        document.getElementById("airtimeAmount").value;
+
+      if (!network || !phone || !amount) {
+        alert("Please fill in all airtime details.");
+        return;
+      }
+
+      if (!/^0[0-9]{10}$/.test(phone)) {
+        alert("Please enter a valid 11-digit Nigerian phone number.");
+        return;
+      }
+
+      alert(
+        "Airtime order created for " +
+        network +
+        " " +
+        phone +
+        ".\nAmount: ₦" +
+        amount +
+        "\n\nPayment integration will be added next."
+      );
+    }
+
+
+    function buyData() {
+
+      const network =
+        document.getElementById("dataNetwork").value;
+
+      const phone =
+        document.getElementById("dataPhone").value;
+
+      const plan =
+        document.getElementById("dataPlan").value;
+
+      if (!network || !phone || !plan) {
+        alert("Please fill in all data details.");
+        return;
+      }
+
+      if (!/^0[0-9]{10}$/.test(phone)) {
+        alert("Please enter a valid 11-digit Nigerian phone number.");
+        return;
+      }
+
+      alert(
+        "Data order created for " +
+        network +
+        " " +
+        phone +
+        ".\nPlan: " +
+        plan +
+        "\n\nPayment integration will be added next."
+      );
+    }
+
+  </script>
+
+</body>
+</html>
