@@ -15,26 +15,127 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f4f8f5;
-      color: #1f2d24;
+      background:
+        radial-gradient(circle at top right, rgba(0, 255, 120, 0.12), transparent 35%),
+        linear-gradient(135deg, #050805, #071b0d 55%, #020402);
+      color: white;
+      min-height: 100vh;
     }
 
+    /* NAVBAR */
+
     .navbar {
-      background: #087f3d;
-      color: white;
-      padding: 16px 20px;
+      background: rgba(5, 10, 7, 0.96);
+      border-bottom: 1px solid rgba(25, 255, 120, 0.15);
+      padding: 17px 22px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .logo {
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 23px;
+      font-weight: 800;
+      color: #39ff88;
+      letter-spacing: 0.5px;
     }
 
     .logout {
-      background: white;
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid #39ff88;
+      padding: 9px 17px;
+      border-radius: 9px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .logout:hover {
+      background: #39ff88;
+      color: #031108;
+    }
+
+    /* MAIN */
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 30px 18px 50px;
+    }
+
+    /* WELCOME */
+
+    .welcome {
+      margin-bottom: 28px;
+    }
+
+    .welcome small {
+      color: #39ff88;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .welcome h1 {
+      font-size: 34px;
+      margin: 7px 0;
+    }
+
+    .welcome p {
+      color: #a7b5ac;
+      font-size: 15px;
+    }
+
+    /* BALANCE */
+
+    .balance-card {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, #087f3d, #0b5e31 55%, #031b0c);
+      border: 1px solid rgba(57, 255, 136, 0.35);
+      border-radius: 22px;
+      padding: 28px;
+      margin-bottom: 25px;
+      box-shadow: 0 15px 45px rgba(0, 255, 100, 0.12);
+    }
+
+    .balance-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -60px;
+      top: -60px;
+      background: rgba(57, 255, 136, 0.13);
+      border-radius: 50%;
+    }
+
+    .balance-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .balance-title {
+      color: #d8ffe7;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .balance-icon {
+      font-size: 34px;
+    }
+
+    .balance-amount {
+      font      background: white;
       color: #087f3d;
       border: none;
       padding: 9px 15px;
