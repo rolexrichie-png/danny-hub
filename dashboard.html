@@ -4,37 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BoostPro | Dashboard</title>
-
-  <link rel="stylesheet" href="style.css">
+  <title>BoostPro | TikTok Dashboard</title>
 
   <style>
-    /* =========================
-       DASHBOARD DESIGN
-    ========================= */
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f1f8f4;
-      color: #172033;
+      background: #071b12;
+      color: white;
     }
 
-    /* Navigation */
-    .dashboard-nav {
-      background: #063b2b;
-      color: white;
-      padding: 18px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    /* SIDEBAR */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 240px;
+      height: 100vh;
+      background: #0b281b;
+      padding: 25px 15px;
     }
+
+    .logo {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: #39ff88;
+      margin-bottom: 35px;
+    }
+
+    .nav a {
+      display: block;
+      text-decoration: none;
+      color: #c9d8d0;
+      padding: 14px;
+      margin: 8px 0;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .nav a:hover,
+    .nav .active {
+      background: #18    }
 
     .dashboard-logo {
       font-size: 25px;
