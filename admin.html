@@ -45,6 +45,15 @@
       margin-bottom: 30px;
     }
 
+    .admin-email {
+      text-align: center;
+      font-size: 11px;
+      opacity: .75;
+      margin-top: -20px;
+      margin-bottom: 25px;
+      word-break: break-word;
+    }
+
     .nav-item {
       display: block;
       padding: 14px 15px;
@@ -69,6 +78,10 @@
       text-align: center;
     }
 
+    .logout:hover {
+      background: #a91f1f;
+    }
+
     .main {
       margin-left: 250px;
       padding: 30px;
@@ -91,6 +104,14 @@
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,.06);
       font-weight: bold;
+    }
+
+    .admin-user small {
+      display: block;
+      color: #66756d;
+      font-size: 11px;
+      margin-top: 4px;
+      font-weight: normal;
     }
 
     .cards {
@@ -277,6 +298,10 @@
       ADMIN PANEL
     </div>
 
+    <div class="admin-email">
+      pennyyise@gmail.com
+    </div>
+
     <a class="nav-item active" href="admin.html">
       📊 Dashboard
     </a>
@@ -297,7 +322,7 @@
       🏠 User Dashboard
     </a>
 
-    <a class="nav-item logout" href="index.html">
+    <a class="nav-item logout logout-btn" href="login.html">
       🚪 Logout
     </a>
 
@@ -306,7 +331,10 @@
 
   <main class="main">
 
-    <button class="mobile-menu" onclick="alert('Admin menu available on desktop view')">
+    <button
+      class="mobile-menu"
+      onclick="alert('Admin menu available on desktop view')"
+    >
       ☰ Admin Menu
     </button>
 
@@ -314,6 +342,7 @@
 
       <div>
         <h1>Admin Dashboard</h1>
+
         <p style="color:#66756d;margin-top:6px;">
           Welcome back, Administrator
         </p>
@@ -321,6 +350,10 @@
 
       <div class="admin-user">
         👑 Administrator
+
+        <small>
+          pennyyise@gmail.com
+        </small>
       </div>
 
     </div>
@@ -331,29 +364,56 @@
     <div class="cards">
 
       <div class="card">
-        <div class="card-title">Total Users</div>
-        <div class="card-value green" id="totalUsers">
+        <div class="card-title">
+          Total Users
+        </div>
+
+        <div
+          class="card-value green"
+          id="totalUsers"
+        >
           0
         </div>
       </div>
 
+
       <div class="card">
-        <div class="card-title">Total Orders</div>
-        <div class="card-value blue" id="totalOrders">
+        <div class="card-title">
+          Total Orders
+        </div>
+
+        <div
+          class="card-value blue"
+          id="totalOrders"
+        >
           0
         </div>
       </div>
 
+
       <div class="card">
-        <div class="card-title">Pending Orders</div>
-        <div class="card-value orange" id="pendingOrders">
+        <div class="card-title">
+          Pending Orders
+        </div>
+
+        <div
+          class="card-value orange"
+          id="pendingOrders"
+        >
           0
         </div>
       </div>
 
+
       <div class="card">
-        <div class="card-title">Revenue</div>
-        <div class="card-value green" id="revenue">
+        <div class="card-title">
+          Revenue
+        </div>
+
+        <div
+          class="card-value green"
+          id="revenue"
+        >
           ₦0
         </div>
       </div>
@@ -414,6 +474,7 @@
               <td>#0001</td>
               <td>TikTok Followers</td>
               <td>₦1,500</td>
+
               <td>
                 <span class="status completed">
                   Completed
@@ -421,10 +482,12 @@
               </td>
             </tr>
 
+
             <tr>
               <td>#0002</td>
               <td>TikTok Views</td>
               <td>₦800</td>
+
               <td>
                 <span class="status processing">
                   Processing
@@ -432,10 +495,12 @@
               </td>
             </tr>
 
+
             <tr>
               <td>#0003</td>
               <td>TikTok Likes</td>
               <td>₦500</td>
+
               <td>
                 <span class="status pending">
                   Pending
@@ -460,7 +525,9 @@
 
       <p style="margin-bottom:10px;">
         🟢 Website Status:
-        <strong style="color:#087f3f;">Online</strong>
+        <strong style="color:#087f3f;">
+          Online
+        </strong>
       </p>
 
       <p style="margin-bottom:10px;">
@@ -470,7 +537,16 @@
 
       <p>
         🔐 Admin Access:
-        <strong>Protected</strong>
+        <strong style="color:#087f3f;">
+          Protected
+        </strong>
+      </p>
+
+      <p style="margin-top:10px;">
+        👑 Admin:
+        <strong>
+          pennyyise@gmail.com
+        </strong>
       </p>
 
     </div>
@@ -480,31 +556,118 @@
 
   <script>
 
-    // Load localStorage statistics
+    /* =========================================
+       BOOSTPRO ADMIN DASHBOARD
+    ========================================= */
+
+    const ADMIN_EMAIL =
+      "pennyyise@gmail.com";
+
+
+    /* =========================================
+       CHECK ADMIN ACCESS
+    ========================================= */
+
+    const loggedIn =
+      localStorage.getItem(
+        "boostproLoggedIn"
+      ) === "true";
+
+
+    const savedAccount =
+      localStorage.getItem(
+        "boostproAccount"
+      );
+
+
+    let account = null;
+
+
+    if (savedAccount) {
+
+      try {
+
+        account =
+          JSON.parse(savedAccount);
+
+      } catch (error) {
+
+        account = null;
+
+      }
+
+    }
+
+
+    if (
+      !loggedIn ||
+      !account ||
+      !account.email ||
+      account.email.toLowerCase() !==
+      ADMIN_EMAIL.toLowerCase()
+    ) {
+
+      alert(
+        "Access denied. Admin login required."
+      );
+
+      window.location.href =
+        "login.html";
+
+    }
+
+
+    /* =========================================
+       LOAD STATISTICS
+    ========================================= */
+
     const users =
-      JSON.parse(localStorage.getItem("users")) || [];
+      JSON.parse(
+        localStorage.getItem("users")
+      ) || [];
+
 
     const orders =
-      JSON.parse(localStorage.getItem("orders")) || [];
+      JSON.parse(
+        localStorage.getItem("orders")
+      ) || [];
 
-    document.getElementById("totalUsers").textContent =
+
+    document.getElementById(
+      "totalUsers"
+    ).textContent =
       users.length;
 
-    document.getElementById("totalOrders").textContent =
+
+    document.getElementById(
+      "totalOrders"
+    ).textContent =
       orders.length;
 
-    const pending =
-      orders.filter(order =>
-        order.status &&
-        order.status.toLowerCase() === "pending"
-      ).length;
 
-    document.getElementById("pendingOrders").textContent =
+    const pending =
+      orders.filter(function(order) {
+
+        return (
+          order.status &&
+          order.status
+            .toLowerCase() ===
+          "pending"
+        );
+
+      }).length;
+
+
+    document.getElementById(
+      "pendingOrders"
+    ).textContent =
       pending;
+
 
     let revenue = 0;
 
-    orders.forEach(order => {
+
+    orders.forEach(function(order) {
 
       const amount =
         Number(order.amount) ||
@@ -515,10 +678,43 @@
 
     });
 
-    document.getElementById("revenue").textContent =
-      "₦" + revenue.toLocaleString();
+
+    document.getElementById(
+      "revenue"
+    ).textContent =
+      "₦" +
+      revenue.toLocaleString(
+        "en-NG"
+      );
+
+
+    /* =========================================
+       LOGOUT
+    ========================================= */
+
+    document.querySelectorAll(
+      ".logout-btn"
+    ).forEach(function(button) {
+
+      button.addEventListener(
+        "click",
+        function(event) {
+
+          event.preventDefault();
+
+          localStorage.removeItem(
+            "boostproLoggedIn"
+          );
+
+          window.location.href =
+            "login.html";
+
+        }
+      );
+
+    });
 
   </script>
 
 </body>
-  </html>
+</html>
