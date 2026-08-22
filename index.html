@@ -20,8 +20,12 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #050805;
-      color: #fff;
+      color: #ffffff;
       line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
     }
 
     /* ================= NAVBAR ================= */
@@ -30,11 +34,416 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(5, 8, 5, 0.95);
+      background: rgba(5, 8, 5, 0.96);
       border-bottom: 1px solid rgba(212, 175, 55, 0.25);
       backdrop-filter: blur(12px);
     }
 
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      color: #d4af37;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #dddddd;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    .nav-login {
+      border: 1px solid #d4af37;
+      padding: 9px 16px;
+      border-radius: 8px;
+      color: #d4af37 !important;
+    }
+
+    .nav-signup {
+      background: #d4af37;
+      color: #050805 !important;
+      padding: 10px 17px;
+      border-radius: 8px;
+      font-weight: 800 !important;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(212,175,55,0.22),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(24,120,65,0.20),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #050805,
+          #0b160c,
+          #071008
+        );
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      right: -180px;
+      bottom: -180px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .hero-content {
+      width: 92%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid rgba(212,175,55,0.45);
+      background: rgba(212,175,55,0.08);
+      color: #e2c45c;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.02;
+      margin-bottom: 25px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #b7c0b8;
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 23px;
+      border-radius: 9px;
+      font-weight: 800;
+      transition: 0.2s;
+    }
+
+    .primary {
+      background: #d4af37;
+      color: #050805;
+    }
+
+    .primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(212,175,55,0.2);
+    }
+
+    .outline {
+      border: 1px solid #687068;
+      color: #ffffff;
+    }
+
+    .outline:hover {
+      border-color: #d4af37;
+      color: #d4af37;
+    }
+
+    /* ================= TRUST BAR ================= */
+
+    .trust-bar {
+      background: #0b120c;
+      border-top: 1px solid rgba(212,175,55,0.12);
+      border-bottom: 1px solid rgba(212,175,55,0.12);
+    }
+
+    .trust-inner {
+      max-width: 1100px;
+      width: 92%;
+      margin: auto;
+      padding: 25px 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      gap: 20px;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: #d4af37;
+      font-size: 24px;
+      margin-bottom: 3px;
+    }
+
+    .trust-item span {
+      color: #8f9990;
+      font-size: 13px;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    .section {
+      padding: 90px 7%;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-heading span {
+      color: #d4af37;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+      font-size: 40px;
+      margin: 10px 0;
+    }
+
+    .section-heading p {
+      color: #7f8981;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services-section {
+      background: #f5f1e4;
+      color: #11150f;
+    }
+
+    .services-section .section-heading p {
+      color: #667064;
+    }
+
+    .service-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 17px;
+      border: 1px solid #e4ddca;
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8edc9;
+      border-radius: 14px;
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #667064;
+      margin-bottom: 20px;
+    }
+
+    .service-card a {
+      color: #9a7810;
+      font-weight: 800;
+    }
+
+    /* ================= WHY SECTION ================= */
+
+    .why-section {
+      background: #081008;
+    }
+
+    .feature-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card {
+      padding: 30px;
+      background: #0d180e;
+      border: 1px solid rgba(212,175,55,0.16);
+      border-radius: 16px;
+    }
+
+    .feature-card .icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .feature-card p {
+      color: #8d988f;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta-section {
+      padding: 90px 7%;
+      background:
+        linear-gradient(
+          135deg,
+          #171306,
+          #0a140b
+        );
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      color: #9ca59e;
+      margin-bottom: 25px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #030503;
+      border-top: 1px solid rgba(212,175,55,0.15);
+      padding: 35px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer p {
+      color: #707870;
+      font-size: 13px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 800px) {
+
+      .navbar {
+        padding: 16px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a:not(.nav-login):not(.nav-signup) {
+        display: none;
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      .hero-content {
+        width: 90%;
+      }
+
+      .hero h1 {
+        font-size: 47px;
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .trust-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 65px 5%;
+      }
+
+      .section-heading h2 {
+        font-size: 32px;
+      }
+
+      .service-grid,
+      .feature-grid {
     .navbar {
       max-width: 1200px;
       margin: auto;
