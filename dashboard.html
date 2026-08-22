@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>BoostPro | Dashboard</title>
 
   <style>
@@ -35,6 +36,498 @@
     .logout {
       background: white;
       color: #087f3d;
+      border: none;
+      padding: 9px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    .welcome {
+      margin-bottom: 25px;
+    }
+
+    .welcome h1 {
+      font-size: 28px;
+      margin-bottom: 7px;
+    }
+
+    .welcome p {
+      color: #66736a;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .stat-card .icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .stat-card h3 {
+      font-size: 14px;
+      color: #68756c;
+      margin-bottom: 7px;
+    }
+
+    .stat-card strong {
+      font-size: 25px;
+    }
+
+    .fund-btn {
+      display: block;
+      margin-top: 12px;
+      text-align: center;
+      background: #0a9848;
+      color: white;
+      padding: 9px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .fund-btn:hover {
+      background: #087f3d;
+    }
+
+    .section-title {
+      margin-bottom: 15px;
+      font-size: 21px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .service-icon {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .service h3 {
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: #68756c;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 17px;
+    }
+
+    .boost-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      background: #0a9848;
+      color: white;
+      padding: 11px;
+      border-radius: 9px;
+      font-weight: bold;
+    }
+
+    .boost-btn:hover {
+      background: #087f3d;
+    }
+
+    .quick {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #087f3d, #16b45b);
+      color: white;
+      padding: 25px;
+      border-radius: 16px;
+    }
+
+    .quick h2 {
+      margin-bottom: 8px;
+    }
+
+    .quick p {
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
+
+    .quick a {
+      display: inline-block;
+      background: white;
+      color: #087f3d;
+      padding: 12px 20px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 4px;
+    }
+
+    .bottom-nav {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .bottom-nav a {
+      text-decoration: none;
+      color: #087f3d;
+      font-weight: bold;
+    }
+
+    @media (max-width: 800px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .welcome h1 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+
+    <div class="logo">
+      🚀 BoostPro
+    </div>
+
+    <button class="logout" onclick="logoutUser()">
+      Logout
+    </button>
+
+  </header>
+
+
+  <main class="container">
+
+    <!-- WELCOME -->
+
+    <section class="welcome">
+
+      <h1>
+        Welcome to BoostPro 👋
+      </h1>
+
+      <p>
+        Manage your social media boosting,
+        airtime, data and account balance.
+      </p>
+
+    </section>
+
+
+    <!-- ACCOUNT STATS -->
+
+    <section class="stats">
+
+      <!-- BALANCE -->
+
+      <div class="stat-card">
+
+        <div class="icon">
+          💰
+        </div>
+
+        <h3>
+          Balance
+        </h3>
+
+        <strong>
+          ₦0.00
+        </strong>
+
+        <a
+          href="fund.html"
+          class="fund-btn">
+          + Fund Account
+        </a>
+
+      </div>
+
+
+      <!-- ORDERS -->
+
+      <div class="stat-card">
+
+        <div class="icon">
+          📦
+        </div>
+
+        <h3>
+          Total Orders
+        </h3>
+
+        <strong>
+          0
+        </strong>
+
+      </div>
+
+
+      <!-- ACTIVE ORDERS -->
+
+      <div class="stat-card">
+
+        <div class="icon">
+          ⚡
+        </div>
+
+        <h3>
+          Active Orders
+        </h3>
+
+        <strong>
+          0
+        </strong>
+
+      </div>
+
+
+      <!-- FOLLOWERS -->
+
+      <div class="stat-card">
+
+        <div class="icon">
+          👥
+        </div>
+
+        <h3>
+          Followers Boosted
+        </h3>
+
+        <strong>
+          0
+        </strong>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <h2 class="section-title">
+      Choose a Service
+    </h2>
+
+
+    <section class="services">
+
+      <!-- TIKTOK -->
+
+      <div class="service">
+
+        <div class="service-icon">
+          🎵
+        </div>
+
+        <h3>
+          TikTok Boost
+        </h3>
+
+        <p>
+          Choose TikTok growth services
+          such as followers, likes and views.
+        </p>
+
+        <a
+          class="boost-btn"
+          href="order.html">
+          Boost TikTok
+        </a>
+
+      </div>
+
+
+      <!-- INSTAGRAM -->
+
+      <div class="service">
+
+        <div class="service-icon">
+          📸
+        </div>
+
+        <h3>
+          Instagram Boost
+        </h3>
+
+        <p>
+          Boost your Instagram account
+          with available social-media services.
+        </p>
+
+        <a
+          class="boost-btn"
+          href="order.html">
+          Boost Instagram
+        </a>
+
+      </div>
+
+
+      <!-- YOUTUBE -->
+
+      <div class="service">
+
+        <div class="service-icon">
+          ▶️
+        </div>
+
+        <h3>
+          YouTube Boost
+        </h3>
+
+        <p>
+          Choose available YouTube services
+          for your channel and videos.
+        </p>
+
+        <a
+          class="boost-btn"
+          href="order.html">
+          Boost YouTube
+        </a>
+
+      </div>
+
+
+      <!-- AIRTIME & DATA -->
+
+      <div class="service">
+
+        <div class="service-icon">
+          📱
+        </div>
+
+        <h3>
+          Airtime & Data
+        </h3>
+
+        <p>
+          Buy airtime or mobile data for
+          MTN, Airtel, Glo and 9mobile.
+        </p>
+
+        <a
+          class="boost-btn"
+          href="recharge.html">
+          Recharge Now
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- QUICK ACTIONS -->
+
+    <section class="quick">
+
+      <h2>
+        🚀 Quick Actions
+      </h2>
+
+      <p>
+        Fund your account or create a new
+        boosting order.
+      </p>
+
+      <a href="fund.html">
+        💰 Fund Account
+      </a>
+
+      <a href="order.html">
+        🚀 New Boost Order
+      </a>
+
+      <a href="recharge.html">
+        📱 Recharge
+      </a>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="bottom-nav">
+
+      <a href="dashboard.html">
+        🏠 Dashboard
+      </a>
+
+      <a href="services.html">
+        🛍️ Services
+      </a>
+
+      <a href="orders.html">
+        📦 My Orders
+      </a>
+
+      <a href="recharge.html">
+        📱 Airtime & Data
+      </a>
+
+      <a href="fund.html">
+        💰 Fund Account
+      </a>
+
+      <a href="profile.html">
+        👤 Profile
+      </a>
+
+    </nav>
+
+  </main>
+
+
+  <script>
+
+    function logoutUser() {
+
+      localStorage.removeItem("currentUser");
+
+      window.location.href = "login.html";
+
+    }
+
+  </script>
+
+</body>
+</html>      color: #087f3d;
       border: none;
       padding: 9px 15px;
       border-radius: 8px;
