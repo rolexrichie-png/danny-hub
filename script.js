@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     CHANGE THIS to the email you want to use
     as the BoostPro administrator.
   */
-  const ADMIN_EMAIL = "admin@boostpro.com";
+  const ADMIN_EMAIL = "pennyyise@gmail.com";
 
   /*
     Pages that require a normal user to be logged in.
