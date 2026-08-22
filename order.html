@@ -31,10 +31,49 @@
       color: #ffffff;
     }
 
-    /* ================= TOPBAR ================= */
+    /* TOPBAR */
 
     .topbar {
       background: rgba(5, 8, 5, 0.96);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      color: #d4af37;
+      font-size: 26px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #cccccc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    /* CONTAINER */
+
+    .order-container      background: rgba(5, 8, 5, 0.96);
       border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 
       padding: 18px 7%;
