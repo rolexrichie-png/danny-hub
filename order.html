@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BoostPro | Place Order</title>
 
-  <link rel="stylesheet" href="style.css">
+  <title>BoostPro | Place Order</title>
 
   <style>
     * {
@@ -15,26 +14,262 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #063b2b, #0a9b61, #e7f8ef);
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(212, 175, 55, 0.16),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at bottom right,
+          rgba(0, 100, 50, 0.25),
+          transparent 35%
+        ),
+        #050805;
       min-height: 100vh;
-      color: #172033;
+      color: #ffffff;
     }
 
+    /* ================= TOPBAR ================= */
+
     .topbar {
-      background: #063b2b;
+      background: rgba(5, 8, 5, 0.96);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+
       padding: 18px 7%;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      backdrop-filter: blur(12px);
     }
 
     .logo {
-      color: #5ee59b;
+      color: #d4af37;
       font-size: 26px;
       font-weight: 800;
       text-decoration: none;
+      letter-spacing: 1px;
     }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #cccccc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #d4af37;
+    }
+
+    /* ================= CONTAINER ================= */
+
+    .order-container {
+      width: 92%;
+      max-width: 900px;
+      margin: 45px auto 70px;
+    }
+
+    /* ================= HEADER ================= */
+
+    .order-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .order-header .badge {
+      display: inline-block;
+
+      padding: 7px 13px;
+
+      margin-bottom: 12px;
+
+      border: 1px solid rgba(212, 175, 55, 0.35);
+
+      border-radius: 30px;
+
+      color: #d4af37;
+
+      background: rgba(212, 175, 55, 0.07);
+
+      font-size: 12px;
+    }
+
+    .order-header h1 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .order-header p {
+      color: #999999;
+      font-size: 14px;
+    }
+
+    /* ================= CARD ================= */
+
+    .order-card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15, 23, 15, 0.98),
+          rgba(7, 11, 7, 0.98)
+        );
+
+      border: 1px solid rgba(212, 175, 55, 0.25);
+
+      padding: 35px;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45);
+    }
+
+    /* ================= FORM ================= */
+
+    .form-group {
+      margin-bottom: 21px;
+    }
+
+    .form-group label {
+      display: block;
+
+      font-weight: 700;
+
+      margin-bottom: 8px;
+
+      color: #dddddd;
+
+      font-size: 14px;
+    }
+
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+
+      padding: 14px;
+
+      border: 1px solid #293529;
+
+      border-radius: 10px;
+
+      outline: none;
+
+      font-size: 14px;
+
+      background: #080d08;
+
+      color: #ffffff;
+
+      transition: 0.25s;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #d4af37;
+
+      box-shadow:
+        0 0 0 3px rgba(212, 175, 55, 0.07);
+    }
+
+    .form-group select option {
+      background: #080d08;
+      color: #ffffff;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #626a62;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* ================= PRICE ================= */
+
+    .price-box {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.10),
+          rgba(0, 90, 45, 0.13)
+        );
+
+      border: 1px solid rgba(212, 175, 55, 0.25);
+
+      padding: 20px;
+
+      border-radius: 13px;
+
+      margin: 25px 0;
+    }
+
+    .price-box h3 {
+      color: #d4af37;
+
+      margin-bottom: 7px;
+
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 30px;
+
+      font-weight: 800;
+
+      color: #ffffff;
+    }
+
+    .price-info {
+      color: #777f77;
+
+      font-size: 12px;
+
+      margin-top: 5px;
+    }
+
+    /* ================= BUTTON ================= */
+
+    .submit-btn {
+      width: 100%;
+
+      border: none;
+
+      padding: 15px;
+
+      border-radius: 10px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d4af37,
+          #f0d56b
+        );
+
+      color: #050805;
+
+      font-size: 16px;
+
+      font-weight: 800;
+
+      cursor    }
 
     .nav-links {
       display: flex;
