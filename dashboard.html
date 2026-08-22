@@ -8,33 +8,298 @@
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: Arial, sans-serif;
       background: #f4f8f5;
-      color: #17221a;
+      color: #17251b;
     }
 
     .navbar {
-      background: linear-gradient(135deg, #087f3d, #16b45b);
+      background: linear-gradient(135deg, #087f23, #13b83d);
       color: white;
-      padding: 18px 20px;
+      padding: 16px 6%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 25px;
       font-weight: bold;
     }
 
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 9px 13px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.18);
+    }
+
     .logout {
+      background: #ff4d4d;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+    }
+
+    .welcome {
+      background: linear-gradient(135deg, #087f23, #16b93f);
+      color: white;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .welcome h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .welcome p {
+      opacity: 0.9;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .card {
       background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #66736a;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .balance {
+      font-size: 28px;
+      font-weight: bold;
+      color: #087f23;
+    }
+
+    .card-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .action-card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .action-card h2 {
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .action-card p {
+      color: #68736c;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      border: none;
+      padding: 12px 20px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .fund-btn {
+      background: #087f23;
+      color: white;
+    }
+
+    .order-btn {
+      background: #e9f7ec;
+      color: #087f23;
+    }
+
+    .fund-section {
+      display: none;
+      background: white;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .fund-section.active {
+      display: block;
+    }
+
+    .fund-section h2 {
+      color: #087f23;
+      margin-bottom: 8px;
+    }
+
+    .fund-section p {
+      color: #68736c;
+      margin-bottom: 20px;
+    }
+
+    .amount-input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccd8ce;
+      border-radius: 9px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      outline: none;
+    }
+
+    .amount-input:focus {
+      border-color: #087f23;
+    }
+
+    .fund-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .fund-option {
+      padding: 13px;
+      background: #f0f8f2;
+      border: 1px solid #cce6d1;
+      border-radius: 9px;
+      cursor: pointer;
+      color: #087f23;
+      font-weight: bold;
+    }
+
+    .fund-option:hover {
+      background: #dff3e3;
+    }
+
+    .close-btn {
+      background: #eeeeee;
+      color: #333;
+      margin-left: 8px;
+    }
+
+    .recent {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .recent h2 {
+      margin-bottom: 18px;
+    }
+
+    .empty {
+      padding: 25px;
+      text-align: center;
+      color: #7b857e;
+      background: #f7faf7;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #718078;
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        grid-template-columns: 1fr;
+      }
+
+      .fund-options {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links a:not(.logout) {
+        display: none;
+      }
+
+      .welcome h1 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">BoostPro</div>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="services.html">Services</a>
+      <a href="orders.html">Orders</a>
+      <a href="profile.html">Profile</a>
+      <a href="login.html" class="logout">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="welcome">
+      <h1>Welcome to BoostPro 👋</h1>
+      <p>Manage your account, fund your balance and grow your social media presence.</p>
+    </section>
+
+    <section class="cards">
+
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h3>ACCOUNT BALANCE</h3>
+        <div class="balance" id="balance">      background: white;
       color: #087f3d;
       border: none;
       padding: 9px 15px;
