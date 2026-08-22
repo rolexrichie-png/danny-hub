@@ -1,40 +1,228 @@
-BoostPro Professional Sign-Up Page
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BoostPro | Create Account</title>
+  <title>BoostPro | Sign Up</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
+      font-family: Arial, Helvetica, sans-serif;
       min-height: 100vh;
-      background: linear-gradient(135deg, #052e16, #166534, #22c55e);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       padding: 20px;
+
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(212, 175, 55, 0.18),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at bottom right,
+          rgba(0, 90, 45, 0.25),
+          transparent 35%
+        ),
+        #050805;
+
+      color: #ffffff;
     }
 
-    .container {
+    /* ================= CONTAINER ================= */
+
+    .auth-container {
       width: 100%;
       max-width: 430px;
     }
 
+    /* ================= LOGO ================= */
+
     .logo {
       text-align: center;
-      color: white;
-      font-size: 32px;
+      margin-bottom: 22px;
+
+      font-size: 30px;
       font-weight: 800;
+      letter-spacing: 1px;
+
+      color: #d4af37;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    /* ================= CARD ================= */
+
+    .auth-card {
+      width: 100%;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(16, 24, 16, 0.98),
+          rgba(6, 10, 6, 0.98)
+        );
+
+      border: 1px solid rgba(212, 175, 55, 0.25);
+
+      border-radius: 20px;
+
+      padding: 32px;
+
+      box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55);
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 3px;
+
+      background: linear-gradient(
+        90deg,
+        #14552f,
+        #d4af37,
+        #14552f
+      );
+    }
+
+    /* ================= HEADING ================= */
+
+    .heading {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .heading h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .heading p {
+      color: #8f968f;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* ================= FORM ================= */
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: #dddddd;
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+
+      left: 14px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: #d4af37;
+
+      font-size: 15px;
+
+      pointer-events: none;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+
+      padding: 13px 14px 13px 42px;
+
+      background: #080d08;
+
+      border: 1px solid #263326;
+
+      border-radius: 9px;
+
+      color: #ffffff;
+
+      font-size: 14px;
+
+      outline: none;
+
+      transition: 0.25s;
+    }
+
+    .input-wrapper input::placeholder {
+      color: #606760;
+    }
+
+    .input-wrapper input:focus {
+      border-color: #d4af37;
+
+      box-shadow:
+        0 0 0 3px rgba(212, 175, 55, 0.07);
+    }
+
+    /* ================= TERMS ================= */
+
+    .terms {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 9px;
+
+      margin: 18px 0;
+
+      color: #858b85;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+    .terms input {
+      width: 15px;
+      height: 15px;
+
+      margin-top: 2px;
+
+      accent-color: #d4af37;
+
+      flex-shrink: 0;
+    }
+
+    .terms a {
+      color: #d4af37;      font-weight: 800;
       margin-bottom: 20px;
       letter-spacing: 1px;
     }
