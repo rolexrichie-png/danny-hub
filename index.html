@@ -19,18 +19,17 @@
     }
 
     body {
-      background: #0b0b0b;
+      background: #080808;
       color: #fff;
       overflow-x: hidden;
     }
 
-    /* ================= HEADER ================= */
-
+    /* HEADER */
     header {
       width: 100%;
       padding: 18px 7%;
-      background: #111;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.25);
+      background: rgba(10, 10, 10, 0.96);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -47,17 +46,17 @@
     }
 
     .logo span {
-      color: white;
+      color: #fff;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 24px;
     }
 
     nav a {
-      color: white;
+      color: #fff;
       text-decoration: none;
       font-size: 15px;
       font-weight: 600;
@@ -78,11 +77,9 @@
 
     .nav-btn:hover {
       background: #fff;
-      color: #111 !important;
     }
 
-    /* ================= HERO ================= */
-
+    /* HERO */
     .hero {
       min-height: 90vh;
       display: flex;
@@ -91,12 +88,12 @@
       text-align: center;
       padding: 80px 7%;
       background:
-        radial-gradient(circle at top, rgba(255, 215, 0, 0.22), transparent 40%),
-        linear-gradient(135deg, #050505, #191300, #050505);
+        radial-gradient(circle at top, rgba(255, 215, 0, 0.25), transparent 40%),
+        linear-gradient(135deg, #050505, #1c1600, #050505);
     }
 
     .hero-content {
-      max-width: 850px;
+      max-width: 900px;
     }
 
     .badge {
@@ -112,4 +109,45 @@
 
     .hero h1 {
       font-size: clamp(42px, 7vw, 78px);
-      line
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #ffd700;
+    }
+
+    .hero p {
+      color: #d5d5d5;
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.3s;
+    }
+
+    .primary-btn {
+      background: #ffd700;
+      color: #111;
+      box-shadow: 0 8px 30px rgba(255, 215, 0, 0.2);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-3px);
+      background
